@@ -77,6 +77,7 @@ First we will perform 4 resamplings and we will measure which sample perorm bett
 - Upsampling Data by adding duplicate rows of minority class
 - Upsampling Data by using SMOTE)
 - Downsampling Data (delete rows in majority class) 
+
 **Resut:**
 - Original Sample: F1 Score 1%
 - Upsample: F1 Score 59%
@@ -102,9 +103,12 @@ We will create a baseline model first and note the score. After that we will use
 - Logistic regression gave AUC score of 52%.
 - Randomforest (after parameter tuning) gave highest AUC of 62%
 - XGBoost (5 fold cross validation) gave AUC of 61%
+
 ![ROC](images/roc.png)
 
-### Feature importance
+
+### Feature importance (only to 12)
+
 ![Feature importance](images/featimp.png)
 
 # DEPLOY
