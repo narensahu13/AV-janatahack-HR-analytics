@@ -7,11 +7,11 @@ AnalyticsVidhya- Predict probability of an Enrollee's Job outlook
 [Problem Link](https://datahack.analyticsvidhya.com/contest/janatahack-hr-analytics/#ProblemStatement)
 
 **NOTE: While developing the model, we have assumed that no test set is present. So all the analysis inclusing missing value treatment is based on training
-**data provided. With this we were able to score 68.3% (AUC) vs top score of 69.4%.
+data provided. With this we were able to score 68.3% (AUC) vs top score of 69.4%.**
 
 # 1. DEFINE
 
-#### Problem Statement
+### Problem Statement
 
 A training institute which conducts training for analytics/ data science wants to expand their business to manpower recruitment 
 (data science only) as well. Company gets large number of signups for their trainings. Now, company wants to connect these enrollees with their clients who are looking to 
@@ -20,7 +20,7 @@ They have student information related to demographics, education, experience and
 To understand the factors that lead a person to look for a job change, the agency wants to design a model that uses the current 
 credentials/demographics/experience to predict the probability of an enrollee to look for a new job.
 
-#### Available Data
+### Available Data
 
 | Variable Type	| Variables |
 | ------------- | ----------------- |
@@ -33,7 +33,7 @@ credentials/demographics/experience to predict the probability of an enrollee to
 
 # 2. DISCOVER
 
-#### Exploratory Data Analysis
+### Exploratory Data Analysis
 
 We observed that target (job outlook) is negatively correlated with city development index (not very high) because students coming from a metropolitan
 city or the city with high development index who might already have a job (preferably in analytics) and enrolled in the course to gain more knowledge.
@@ -58,7 +58,7 @@ Among all the students, more than half have a gradudate degree and nearly 20% wi
 ![univariate_cat](images/univariate_cat.png)
 
 
-#### Data Quality Check
+### Data Quality Check
 There were missing values in some columns inclusing gender, company type and size, university major. As per observation, there were no unexpected 
 values in the dataset. We will handle the missing values by replacing the numeric columns with median and categorical columns with mode of the data. Also
 we will create one additional new column per the missing value columns to indicate if a row is missing in the original data or not. For e.g. if `gender`
@@ -67,7 +67,7 @@ a row was missing from original data or not.
 
 Next we will do the one-hot encoding of the categorical variables.
 
-#### Treating Imbalance Classes
+### Treating Imbalance Classes
 
 We have observed in the data that only 13% are in the minority class (looking for a job). As our model will have difficult time coping this type of data,
 we will treat the minority classes.
@@ -85,10 +85,10 @@ First we will perform 4 resamplings and we will measure which sample perorm bett
 
 So we chose SMOTE sample to further do the modelling.
 
-#### Evaluation Metric
+### Evaluation Metric
 Submissions are evaluated on Area under curve (AUC) between the predicted probability and observed category in the test set.
 
-#### Hypothesize Solution
+### Hypothesize Solution
 We will create a baseline model first and note the score. After that we will use tree classifiers and logistic regression to beat the baseline.
 4 models
 - Baseline model (Here we predict probability of each row as 0.13 as in the data set we have 13% of the students who are looking for a job)
@@ -104,7 +104,7 @@ We will create a baseline model first and note the score. After that we will use
 - XGBoost (5 fold cross validation) gave AUC of 61%
 ![ROC](images/roc.png)
 
-#### Feature importance
+### Feature importance
 ![Feature importance](images/featimp.png)
 
 # DEPLOY
@@ -112,7 +112,7 @@ We will create a baseline model first and note the score. After that we will use
 - We automated training pipeline.
 - Automated the prediction pipeline on the new data set.
 
-#### Conclusion & Recommendation
+### Conclusion & Recommendation
 
 We want our machine learn model to capture as much of the minority class as possible (i.e students looking for job change). 
 Our objective is to catch all of the highly probable students with such characteristics at the risk of flagging some low-probable students not 
