@@ -112,7 +112,7 @@ We will create a baseline model first and note the score. After that we will use
 
 ![Feature importance](images/featimp.png)
 
-# DEPLOY
+# 4. DEPLOY
 
 - We automated training pipeline.
 - Automated the prediction pipeline on the new data set.
