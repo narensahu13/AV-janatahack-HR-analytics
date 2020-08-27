@@ -79,7 +79,7 @@ and then we will select the best sample. $ resamples are as below:
 - Upsampling Data by using SMOTE)
 - Downsampling Data (delete rows in majority class) 
 
-**Resut afterperforming Logistic regression on each resample:**
+**Result after performing Logistic regression on each resample:**
 - Original Sample: F1 Score 1%
 - Upsample: F1 Score 59%
 - SMOTE: F1 Score 76%
