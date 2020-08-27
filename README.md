@@ -72,19 +72,20 @@ Next we will do the one-hot encoding of the categorical variables.
 We have observed in the data that only 13% are in the minority class (looking for a job). As our model will have difficult time coping this type of data,
 we will treat the minority classes.
 
-First we will perform 4 resamplings and we will measure which sample perorm better in terms of some metric and then we will select the best sample.
+First we will perform 4 resamplings and we will measure which sample perorm better by using logistic regression to compute score for each reample 
+and then we will select the best sample. $ resamples are as below:
 - Orginal Sample
 - Upsampling Data by adding duplicate rows of minority class
 - Upsampling Data by using SMOTE)
 - Downsampling Data (delete rows in majority class) 
 
-**Resut:**
+**Resut afterperforming Logistic regression on each resample:**
 - Original Sample: F1 Score 1%
 - Upsample: F1 Score 59%
 - SMOTE: F1 Score 76%
 - Downsample: F1 Score 59%
 
-So we chose SMOTE sample to further do the modelling.
+So we chose SMOTE sample as it gave highest F1 score to further do the modelling.
 
 ### Evaluation Metric
 Submissions are evaluated on Area under curve (AUC) between the predicted probability and observed category in the test set.
